@@ -1443,7 +1443,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h2 class="counter-card_number"><span class="counter-number">3658</span>+</h2>
-                                    <p class="counter-card_text">Satisfied Customers</p>
+                                    <p class="counter-card_text">Clientes satisfeitos</p>
                                 </div>
                             </div>
                         </div>
