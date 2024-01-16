@@ -106,7 +106,8 @@
                                 </span>
                                 <h2 class="sec-title">Nos envie uma mensagem</h2>
                             </div>
-                            <form action="mail.php" method="POST" class="contact-form ajax-contact">
+                            <form action="{{ route('contato.enviar') }}" method="POST" class="contact-form">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -139,7 +140,7 @@
                                 </div>
 
                                 <div class="form-btn col-12">
-                                    <button class="btn">Enviar mensagem</button>
+                                    <button type="submit" value="Enviar Mensagem" class="btn"> enviar mensagem</button>
                                 </div>
                             </form>
                         </div>

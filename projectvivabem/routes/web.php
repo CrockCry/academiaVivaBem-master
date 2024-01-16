@@ -44,5 +44,7 @@ Route::get('/treino', [TreinoController::class, 'index'])->name('treino');
 
 // Rota para a página "Contato"
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
+// Rotas de envio do formulário de contato
+Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
 
 
