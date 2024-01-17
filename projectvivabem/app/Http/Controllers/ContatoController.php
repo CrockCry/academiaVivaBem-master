@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 //use Dotenv\Validator;
+use App\Mail\ContatoEmail;
+use App\Models\Contato;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -15,7 +18,7 @@ class ContatoController extends Controller
 
     public function salvarNoBanco(Request $request){
 
-        dd($request);
+        // dd($request);
 
         $dados = $request->json()->all();
 
@@ -29,5 +32,14 @@ class ContatoController extends Controller
 
     ])->validate();
 
+    $contato = Contato::create($validarDados);
+
+    //Envio por email
+    Mail::to('cloudwise@smpsistema.com.br')->send(new ContatoEmail($contato));
+
+    return response()->json(['sucess' => 'Email registrado com sucesso']);
+
     }
+
+
 }

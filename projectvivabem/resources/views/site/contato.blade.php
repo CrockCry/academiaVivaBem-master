@@ -19,11 +19,11 @@
 
     <body>
         <!--********************************
-           Code Start From Here
-         ******************************** -->
+               Code Start From Here
+             ******************************** -->
         <!--==============================
-            Breadcumb
-            ============================== -->
+                Breadcumb
+                ============================== -->
         <div class="breadcumb-wrapper" data-bg-src="assets/img/my/contato/contatoBanner.png">
             <!-- bg animated image/ -->
             <div class="container">
@@ -43,8 +43,8 @@
         </div>
 
         <!--==============================
-                Contact Area
-            ==============================-->
+                    Contact Area
+                ==============================-->
         <div class="contact-area space bg-smoke2">
             <div class="container">
                 <div class="row gy-4 justify-content-center">
@@ -106,41 +106,69 @@
                                 </span>
                                 <h2 class="sec-title">Nos envie uma mensagem</h2>
                             </div>
-                            <form action="{{ route('contato.enviar') }}" method="POST" class="contact-form">
+                            <form action="{{ route('contato.enviar') }}" method="POST" class="contact-form"
+                                id="formContato">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <input type="text" class="form-control style-white" name="name"
-                                                id="name" placeholder="Nome">
+                                                id="name" placeholder="Nome" value="{{ old('name') }}">
                                             <i class="far fa-user"></i>
+                                            @error('name')
+                                                <div class="error">{{ $mensagem }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <input type="text" class="form-control style-white" name="email"
-                                                id="email" placeholder="Email">
+                                                id="email" placeholder="Email" value="{{ old('email') }}">
                                             <i class="far fa-envelope"></i>
+                                            @error('email')
+                                                <div class="error">{{ $mensagem }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control style-white" name="foneContato"
+                                                id="foneContato" placeholder="Telefone" value="{{ old('foneContato') }}">
+                                            <i class="far fa-envelope"></i>
+                                            @error('foneContato')
+                                                <div class="error">{{ $mensagem }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <select name="subject" id="subject" class="form-select style-white">
+                                                <option value="{{ old('subject') }}" disabled="" selected=""
+                                                    hidden="">Selecione o
+                                                    assunto</option>
+                                                <option value="one">Body Building</option>
+                                                <option value="two">Musculação</option>
+                                                <option value="three">Meditação</option>
+                                                <option value="four">Boxe</option>
+                                                <option value="four">Outros</option>
+                                            </select>
+                                            @error('subject')
+                                                <div class="error">{{ $mensagem }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <select name="subject" id="subject" class="form-select style-white">
-                                        <option value="" disabled="" selected="" hidden="">Selecione o
-                                            assunto</option>
-                                        <option value="one">Body Building</option>
-                                        <option value="two">Musculação</option>
-                                        <option value="three">Meditação</option>
-                                        <option value="four">Boxe</option>
-                                        <option value="four">Outros</option>
-                                    </select>
-                                </div>
                                 <div class="form-group col-12">
-                                    <textarea placeholder="Sua Mensagem" id="contactForm" class="form-control style-white"></textarea>
+                                    <textarea placeholder="Sua Mensagem" id="contactForm" class="form-control style-white">{{ old('contactForm') }}</textarea>
+                                    @error('contactForm')
+                                        <div class="error">{{ $mensagem }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-btn col-12">
-                                    <button type="submit" value="Enviar Mensagem" class="btn"> enviar mensagem</button>
+                                    <button type="submit" value="Enviar Mensagem" class="btn"> enviar
+                                        mensagem</button>
+                                    <div id="contatoMensagem" class="msgContato"></div>
                                 </div>
                             </form>
                         </div>
@@ -235,8 +263,8 @@
 
 
         <!--********************************
-           Code End  Here
-         ******************************** -->
+               Code End  Here
+             ******************************** -->
 
         <!-- Scroll To Top -->
         <div class="scroll-top">

@@ -14,27 +14,29 @@
 
     <!-- Favicons - Place favicon.ico in the root directory -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicons/favicon.png') }}">
-    <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
+    {{-- <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}"> --}}
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
 
+    {{-- TOKEN --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--==============================
  Google Fonts
  ============================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="{{ asset('css/font.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/css/font.css') }}" rel="stylesheet"> --}}
 
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/theme-support.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/theme-support.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/jquery.flipster.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -409,6 +411,8 @@
 
     <!-- Main Js File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    {{-- Script --}}
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 
 </html>
