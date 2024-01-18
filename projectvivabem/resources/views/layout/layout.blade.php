@@ -360,13 +360,19 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="widget footer-widget">
                             <h3 class="widget_title">Receber novidades</h3>
-                            <form class="newsletter-form">
+                            <form action="{{ route('contato.enviarnew') }}" method="POST" id="formEmail"
+                                class="newsletter-form">
+                                @csrf
                                 <div class="form-group">
                                     <i class="far fa-envelope"></i>
-                                    <input class="form-control" type="email" placeholder="Email"
-                                        required="">
+                                    <input class="form-control" type="email" placeholder="Email" required=""
+                                        value="{{ old('emailNews') }}" id="emailNews" name="emailNews">
+                                    @error('emailNews')
+                                        <div class="error">{{ $mensagem }}</div>
+                                    @enderror
                                 </div>
                                 <button type="submit" class="btn style-r0 style2">Subscribe</button>
+                                <div id="contatoMensagem" class="msgContato"></div>
                             </form>
                         </div>
                     </div>

@@ -49,6 +49,45 @@ document.getElementById('formContato').addEventListener('submit', function (e) {
 
 });
 
+
+document.getElementById('formEmail').addEventListener('submit', function (e) {
+
+    e.preventDefault(); //evita que o formulário seja enviado por um submit
+
+    var data = {
+        emailNews: document.getElementById('emailNews').value,
+    }
+
+    fetch('/contato/enviarnew', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (!response.ok){
+                throw new Error('Erro no Servidor!');
+            }
+            return response.json();
+        })
+        .then(data => {
+            showAlert(`<div class="alert alert-success">${data.success}</div>`, 'contatoMensagem')
+            document.getElementById('formEmail').reset();
+        })
+        .catch(errorResponse => {
+            errorResponse,json().then(erroData => {
+                if(erroData.erros){
+                    let errorMessages = Object.values(errorData.erros).map(error => `<div class="alert alert-danger">${error}</div>`).join('');
+                    showAlert(errorMessages)
+                }
+            });
+        });
+
+});
+
+
 // function showAlert(mensagem, targetElementId, timeout = 3000) {
 //     var messageDiv = document.getElementById(targetElementId);
 //     messageDiv.innerHTML = mensagem;

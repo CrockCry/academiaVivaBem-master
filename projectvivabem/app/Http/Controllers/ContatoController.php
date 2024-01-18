@@ -41,5 +41,18 @@ class ContatoController extends Controller
 
     }
 
+    public function salvarEmail(Request $request){
+
+        // dd($request);
+
+        $dados = $request->json()->all();
+
+        $validarDados = Validator::make($dados, [
+
+        'emailNews'      => 'required|email|max:100',
+
+    ])->validate();
+
+    }
 
 }

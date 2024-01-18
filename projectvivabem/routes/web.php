@@ -47,4 +47,4 @@ Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 // Rotas de envio do formulário de contato
 Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
 
-
+Route::post('/contato/enviarnew', [ContatoController::class, 'salvarEmail'])->name('contato.enviarnew');
