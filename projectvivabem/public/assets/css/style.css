@@ -334,6 +334,8 @@ h6 {
     line-height: 1.5;
 }
 
+
+
 /* Medium Large devices */
 @media (max-width: 1399px) {
 
@@ -16966,3 +16968,4 @@ span.select2-selection.select2-selection--single:focus {
         padding-top: 65px;
     }
 }
+

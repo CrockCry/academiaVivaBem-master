@@ -5,7 +5,7 @@
 @section('conteudo')
 
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="pt-BR">
 
 <head>
     <meta charset="utf-8">

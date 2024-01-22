@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
@@ -356,6 +356,21 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+
+                        <div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class="-"><div class="">.+-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-+
+                            .-+
+
+                        </div>
+                        <-></-></div></div>
+                        <-></-></div>
+                        <-></-></div>
+                        <-></-></div>
+                        <-></-></div>
+                        <-></-></div>
+                        <-></->
                     </div>
                     <div class="col-md-6 col-xl-3">
                         <div class="widget footer-widget">
