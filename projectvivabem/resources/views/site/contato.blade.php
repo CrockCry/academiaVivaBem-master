@@ -156,7 +156,7 @@
                                 </div>
 
                                 <div class="form-btn col-12">
-                                    <button type="submit" value="Enviar Mensagem" class="btn"> enviar
+                                    <button type="submit" value="Enviar Mensagem" class="btn" onclick="contatoForm(event)"> enviar
                                         mensagem</button>
                                     <div id="contatoMensagem" class="msgContato"></div>
                                 </div>

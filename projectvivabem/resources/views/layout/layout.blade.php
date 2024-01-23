@@ -357,20 +357,6 @@
                             </div>
                         </div>
 
-
-
-
-                        <div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class="-"><div class="">.+-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-+
-                            .-+
-
-                        </div>
-                        <-></-></div></div>
-                        <-></-></div>
-                        <-></-></div>
-                        <-></-></div>
-                        <-></-></div>
-                        <-></-></div>
-                        <-></->
                     </div>
                     <div class="col-md-6 col-xl-3">
                         <div class="widget footer-widget">
@@ -381,12 +367,10 @@
                                 <div class="form-group">
                                     <i class="far fa-envelope"></i>
                                     <input class="form-control" type="email" placeholder="Email" required=""
-                                        value="{{ old('emailNews') }}" id="emailNews" name="emailNews">
-                                    @error('emailNews')
-                                        <div class="error">{{ $mensagem }}</div>
-                                    @enderror
+                                        value="{{ old('emailNews') }}" id="emailNews" name="emailNews" >
+                                        <div id="emailNewsError" class="error-mensagem"></div>
                                 </div>
-                                <button type="submit" class="btn style-r0 style2">Subscribe</button>
+                                <button type="submit" class="btn style-r0 style2" onclick="newsForm(event)">Subscribe</button>
                                 <div id="contatoMensagem" class="msgContato"></div>
                             </form>
                         </div>
