@@ -7,6 +7,7 @@ use App\Http\Controllers\NoticiasController;
 use App\Http\Controllers\ServicoController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\TreinoController;
+use App\Http\Controllers\deshboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,10 @@ Route::get('/treino', [TreinoController::class, 'index'])->name('treino');
 
 // Rota para a página "Contato"
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
+
+// Rota de login
+Route::get('/deshboard', [deshboardController::class, 'index'])->name('deshboard');
+
 // Rotas de envio do formulário de contato
 Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
 

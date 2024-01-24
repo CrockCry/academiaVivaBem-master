@@ -152,6 +152,7 @@
                     <li>
                         <a href="{{ route('contato') }}">Contato</a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -242,6 +243,9 @@
                                     </li>
                                     <li>
                                         <a href="{{ route('contato') }}">Conato</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('deshboard') }}">Login</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -367,10 +371,11 @@
                                 <div class="form-group">
                                     <i class="far fa-envelope"></i>
                                     <input class="form-control" type="email" placeholder="Email" required=""
-                                        value="{{ old('emailNews') }}" id="emailNews" name="emailNews" >
-                                        <div id="emailNewsError" class="error-mensagem"></div>
+                                        value="{{ old('emailNews') }}" id="emailNews" name="emailNews">
+                                    <div id="emailNewsError" class="error-mensagem"></div>
                                 </div>
-                                <button type="submit" class="btn style-r0 style2" onclick="newsForm(event)">Subscribe</button>
+                                <button type="submit" class="btn style-r0 style2"
+                                    onclick="newsForm(event)">Subscribe</button>
                                 <div id="contatoMensagem" class="msgContato"></div>
                             </form>
                         </div>
