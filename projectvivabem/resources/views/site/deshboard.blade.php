@@ -27,21 +27,28 @@
 </head>
 
 <body class="text-center">
-    <form class="form-signin">
+    <form action="{{ route('deshboard') }}" method="POST" class="form-signin">
+        @csrf
         <img class="mb-4" src="assets/img/logoVivaBem.svg" alt="Logo vivabem" style="width: 80%">
         <h1 class="h3 mb-3 font-weight-normal">Bem vindo!
         </h1>
         <label for="inputEmail" class="sr-only"></label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <input type="email" name="email" class="form-control" placeholder="Email"
+            value="{{ old('email') }}" />
+        {{ $errors->has('email') ? $errors->first('email') : '' }}
+
         <label for="inputPassword" class="sr-only"></label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <input type="password" name="password" class="form-control" placeholder="Senha"
+            value="{{ old('password') }}" />
+        {{ $errors->has('password') ? $errors->first('password') : '' }}
+
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" value="remember-me" class="checkbox"> Lembrar de mim
             </label>
         </div>
         <a href="{{ route('home') }}"><button class="btn btn-outline-secondary btn-block">Voltar</button></a>
-        <button class="btn btn-success btn-block" type="submit">Entrar</button>
+        <button class="btn btn-success btn-block" type="submit" value="login">Entrar</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2024 VivaBem</p>
     </form>
 </body>

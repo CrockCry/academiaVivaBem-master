@@ -48,6 +48,10 @@ Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 // Rota de login
 Route::get('/deshboard', [deshboardController::class, 'index'])->name('deshboard');
+Route::post('/deshboard', [deshboardController::class, 'autenticar'])->name('deshboard');
+
+
+
 
 // Rotas de envio do formulário de contato
 Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');

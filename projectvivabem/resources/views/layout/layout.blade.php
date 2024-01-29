@@ -244,9 +244,6 @@
                                     <li>
                                         <a href="{{ route('contato') }}">Conato</a>
                                     </li>
-                                    <li>
-                                        <a href="{{ route('deshboard') }}">Login</a>
-                                    </li>
                                 </ul>
                             </nav>
                             <div class="navbar-right d-inline-flex d-lg-none">
@@ -261,6 +258,9 @@
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <div class="header-button">
+                                <a href="{{ route('deshboard') }}" class="btn style2 style-r0 d-xl-block d-none">
+                                    Login
+                                </a>
                                 <a href="contact.html" class="btn style2 style-r0 d-xl-block d-none">
                                     Marque uma consulta
                                 </a>
