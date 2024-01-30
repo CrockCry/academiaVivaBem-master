@@ -67,8 +67,13 @@ class ContatoController extends Controller
 
             return response()->json(['success' => 'Email registrado com sucesso']); // Registro do email
         }
+
     }
+
+
 }
+
+
 
 
 

@@ -116,12 +116,23 @@ function newsForm (e) {
             }
         })
         .catch(error => {
+            let errorMessage = "Erro desconhecido";
+
             if (error.errors) {
-                displayError(error.errors);
-            } else {
-                console.log("Erro desconhecido", error);
+                // Se houver erros de validação, exiba cada mensagem de erro
+                errorMessage = Object.values(error.errors).flat().join('<br>');
+            } else if (error.message) {
+                // Se houver uma mensagem de erro geral, exiba essa mensagem
+                errorMessage = error.message;
             }
+
+            showAlert(
+                `<div class="alert alert-danger">${errorMessage}</div>`,
+                "contatoMensagem"
+            );
         });
+
+
 };
 
 

@@ -1,6 +1,6 @@
 @extends('site.deshboard.layout-dash.layout')
 
-@section('title', 'Dashboard')
+@section('title', 'Deshboard')
 
 @section('conteudo')
 
