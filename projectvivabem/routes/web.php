@@ -50,8 +50,8 @@ Route::get('/treino', [TreinoController::class, 'index'])->name('treino');
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 // Rota de login
-Route::get('/deshboard', [deshboardController::class, 'index'])->name('deshboard');
-Route::post('/deshboard', [deshboardController::class, 'autenticar'])->name('deshboard');
+Route::get('/deshboard', [deshboardController::class, 'index'])->name('deshboard'); // chama o metodo index da class deshboardController
+Route::post('/deshboard', [deshboardController::class, 'autenticar'])->name('deshboard'); //  Método que realiza o autenticação do usuário
 
 //  Logout
 Route::get('/deshboardPaginas/aluno', [alunoController::class, 'index'])->name('deshboardPaginas.aluno');
