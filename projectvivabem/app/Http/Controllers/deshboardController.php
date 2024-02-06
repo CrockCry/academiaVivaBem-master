@@ -52,12 +52,37 @@ class deshboardController extends Controller
         $tipoUsuario = $usuario->tipo_usuario;
 
         if ($tipoUsuario instanceof Aluno) {
-            dd($tipoUsuario);
+
+            session([
+                'id'               => $tipoUsuario->idAluno,
+                'nome'             => $tipoUsuario->nomeAluno,
+                'tipo_usuario'     => 'Aluno'
+            ]);
+
+            // dd($tipoUsuario);
+
+            return redirect()->route('deshboardPaginas.aluno'); // redireciona para a pagina principal do aluno
+
         } elseif ($tipoUsuario instanceof Funcionario) {
-            dd($tipoUsuario);
-        } else{
-            dd("to aqui");
+            if ($tipoUsuario->tipoFuncionario == 'administrativo') {
+                session([
+                    'id'               => $tipoUsuario->idFuncionario,
+                    'nome'             => $tipoUsuario->nomeFuncionario,
+                    'tipoFuncionario'  => $tipoUsuario->tipoFuncionario,
+                ]);
+                return redirect()->route('deshboardPaginas.administrativo'); // redireciona para a pagina principal do administrador
+
+
+            } elseif ($tipoUsuario->tipoFuncionario == 'instrutor') {
+                session([
+                    'id'               => $tipoUsuario->idFuncionario,
+                    'nome'             => $tipoUsuario->nomeFuncionario,
+                    'tipoFuncionario'  => $tipoUsuario->tipoFuncionario,
+                ]);
+                return redirect()->route('deshboardPaginas.instutor'); // redireciona para a pagina principal do instrutor
+            }
         }
 
+        return back()->withErrors(['email' => 'Erro desconhecido de autenticação']);
     }
 }

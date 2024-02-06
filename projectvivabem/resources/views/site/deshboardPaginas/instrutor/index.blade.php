@@ -1,9 +1,14 @@
-@extends('site.deshboard.layout-dash.layout')
+@extends('layout.layout')
 
-@section('title', 'Dashboard')
+@section('title', 'Deshboard')
 
 @section('conteudo')
 
 <h1>INSTRUTOR</h1>
 
+<a href="{{ route('sair') }}" class="btn btn-danger">sair</a>
+
 @endsection
+
+
+

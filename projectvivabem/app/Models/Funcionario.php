@@ -9,6 +9,7 @@ class Funcionario extends Model
 {
     use HasFactory;
 
+    protected $table = 'funcionarios';
     protected $primaryKey = "idFuncionario";
 
     public function usuario(){

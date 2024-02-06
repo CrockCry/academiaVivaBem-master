@@ -29,16 +29,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="breadcumb-content">
-                            <h1 class="breadcumb-title">Contato</h1>
-                            <ul class="breadcumb-menu">
-                                <li><a href="index.html">HOME</a></li>
-                                <li class="active">CONTATO</li>
-                            </ul>
-                        </div>
+                        <h2 class="title">Contato</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Contato</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
-
             </div>
         </div>
 
