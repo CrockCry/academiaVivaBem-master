@@ -11,6 +11,6 @@ class instrutorController extends Controller
     public function index()
     {
 
-        return view('site.deshboardPaginas.instrutor.index');
+        return view('deshboardPaginas.instrutor.index');
     }
 }

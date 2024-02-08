@@ -51,11 +51,15 @@ class deshboardController extends Controller
 
         $tipoUsuario = $usuario->tipo_usuario;
 
+
+        session(['email'=> $usuario->email]);
+
         if ($tipoUsuario instanceof Aluno) {
 
             session([
                 'id'               => $tipoUsuario->idAluno,
                 'nome'             => $tipoUsuario->nomeAluno,
+                'email'            => $tipoUsuario->email,
                 'tipo_usuario'     => 'Aluno'
             ]);
 
@@ -65,18 +69,22 @@ class deshboardController extends Controller
 
         } elseif ($tipoUsuario instanceof Funcionario) {
             if ($tipoUsuario->tipoFuncionario == 'administrativo') {
+                
                 session([
                     'id'               => $tipoUsuario->idFuncionario,
                     'nome'             => $tipoUsuario->nomeFuncionario,
+                    'email'            => $tipoUsuario->email,
                     'tipoFuncionario'  => $tipoUsuario->tipoFuncionario,
                 ]);
                 return redirect()->route('deshboardPaginas.administrativo'); // redireciona para a pagina principal do administrador
 
 
             } elseif ($tipoUsuario->tipoFuncionario == 'instrutor') {
+
                 session([
                     'id'               => $tipoUsuario->idFuncionario,
                     'nome'             => $tipoUsuario->nomeFuncionario,
+                    'email'            => $tipoUsuario->email,
                     'tipoFuncionario'  => $tipoUsuario->tipoFuncionario,
                 ]);
                 return redirect()->route('deshboardPaginas.instutor'); // redireciona para a pagina principal do instrutor

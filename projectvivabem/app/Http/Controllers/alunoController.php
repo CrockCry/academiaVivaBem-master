@@ -11,6 +11,6 @@ class alunoController extends Controller
     public function index()
     {
 
-        return view('site.deshboardPaginas.aluno.index');
+        return view('deshboardPaginas.aluno.index');
     }
 }

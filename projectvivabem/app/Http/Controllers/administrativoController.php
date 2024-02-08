@@ -11,6 +11,6 @@ class administrativoController extends Controller
     public function index()
     {
 
-        return view('site.deshboardPaginas.administrativo.index');
+        return view('deshboardPaginas.administrativo.index');
     }
 }

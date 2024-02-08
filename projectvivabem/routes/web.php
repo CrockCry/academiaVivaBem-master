@@ -11,6 +11,7 @@ use App\Http\Controllers\SobreController;
 use App\Http\Controllers\TreinoController;
 use App\Http\Controllers\deshboardController;
 use App\Http\Controllers\instrutorController;
+use App\Http\Middleware\LogAcessoAcademia;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,9 +55,17 @@ Route::get('/deshboard', [deshboardController::class, 'index'])->name('deshboard
 Route::post('/deshboard', [deshboardController::class, 'autenticar'])->name('deshboard'); //  Método que realiza o autenticação do usuário
 
 //  Logout
-Route::get('/deshboardPaginas/aluno', [alunoController::class, 'index'])->name('deshboardPaginas.aluno');
-Route::get('/deshboardPaginas/instutor', [instrutorController::class, 'index'])->name('deshboardPaginas.instutor');
-Route::get('/deshboardPaginas/administrativo', [administrativoController::class, 'index'])->name('deshboardPaginas.administrativo');
+Route::middleware(['autenticacao:aluno'])->group(function () {
+    Route::get('/deshboardPaginas/aluno', [alunoController::class, 'index'])->name('deshboardPaginas.aluno');
+});
+
+Route::middleware(['autenticacao:instutor'])->group(function () {
+    Route::get('/deshboardPaginas/instutor', [instrutorController::class, 'index'])->name('deshboardPaginas.instutor');
+});
+
+Route::middleware(['autenticacao:administrativo'])->group(function () {
+    Route::get('/deshboardPaginas/administrativo', [administrativoController::class, 'index'])->name('deshboardPaginas.administrativo');
+});
 
 // Rotas de envio do formulário de contato
 Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
@@ -64,7 +73,7 @@ Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->nam
 Route::post('/contato/enviarnew', [ContatoController::class, 'salvarEmail'])->name('contato.enviarnew');
 
 // Rotas que precisam estar logados
-Route::get('/sair', function(){
+Route::get('/sair', function () {
     session()->flush();
     return redirect('/');
 })->name('sair'); //  Fechar Sessão
