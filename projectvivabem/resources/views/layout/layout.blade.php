@@ -40,6 +40,22 @@
     <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/jquery.flipster.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    {{-- Dashboard --}}
+        <!-- Vendor: Bootstrap 4 Stylesheets  -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css">
+
+        <!-- Our Website CSS Styles -->
+        <link rel="stylesheet" href="{{ asset('assets/css/icons.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('assets/css/dash-main.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css">
+
+        <!-- Color Scheme -->
+    <link rel="stylesheet" href="{{ asset('css/color-schemes/color.css') }}" type="text/css" title="color3">
+    <link rel="alternate stylesheet" href="{{ asset('assets/css/color-schemes/color1.css') }}" title="color1">
+    <link rel="alternate stylesheet" href="{{ asset('assets/css/color-schemes/color2.css') }}" title="color2">
+    <link rel="alternate stylesheet" href="{{ asset('assets/css/color-schemes/color4.css') }}" title="color4">
+    <link rel="alternate stylesheet" href="{{ asset('assets/css/color-schemes/color5.css') }}" title="color5">
 </head>
 
 <body>

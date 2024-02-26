@@ -65,6 +65,10 @@ Route::middleware(['autenticacao:instutor'])->group(function () {
 
 Route::middleware(['autenticacao:administrativo'])->group(function () {
     Route::get('/deshboardPaginas/administrativo', [administrativoController::class, 'index'])->name('deshboardPaginas.administrativo');
+
+    Route::get('/deshboardPaginas/administrativo/funcionario', [SobreController::class, 'pagFunc'])->name('dashFuncionario');
+
+    Route::get('/deshboardPaginas/administrativo/funcionario', [administrativoController::class, 'indexFunc'])->name('admin.func.index');
 });
 
 // Rotas de envio do formulário de contato
